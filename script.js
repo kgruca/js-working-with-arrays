@@ -131,3 +131,16 @@ console.log(arr2.reverse());
 // reverse() DOES mutate the original array:
 console.log(arr2);
 // logs ['j', 'i', 'h', 'g', 'f']
+arr2.reverse();
+
+
+// NEW SECTION
+// Concat
+const letters = arr.concat(arr2);
+console.log(letters);
+// logs ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+// this is the same as [...arr, ...arr2]
+const letters2 = [...arr, ...arr2];
+console.log(letters2);
+// logs ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+// neither of these 2 methods mutates the original array
