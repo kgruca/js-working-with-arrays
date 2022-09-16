@@ -78,32 +78,32 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // For-Each Loop
 
 // for camparison, the for-of loop:
-for (const movement of movements) {
+for (const [index, movement] of movements.entries()) {
   if(movement > 0) {
-    console.log(`You deposited ${movement}`);
+    console.log(`Movement ${index + 1}: You deposited ${movement}`);
   } else {
-    console.log(`You withdrew ${Math.abs(movement)}`);
+    console.log(`Movement ${index + 1}: You withdrew ${Math.abs(movement)}`);
   }
 }
-// logs You deposited 200
-// You deposited 450
-// You withdrew 400
-// You deposited 3000
-// You withdrew 650
-// You withdrew 130
-// You deposited 70
-// You deposited 1300
+// Movement 1: You deposited 200
+// Movement 2: You deposited 450
+// Movement 3: You withdrew 400
+// Movement 4: You deposited 3000
+// Movement 5: You withdrew 650
+// Movement 6: You withdrew 130
+// Movement 7: You deposited 70
+// Movement 8: You deposited 1300
 
 console.log('---------FOREACH--------');
 
 // for-each achieves the same thing, in a maybe easier way
-movements.forEach(function(movement) {
-  if(movement > 0) {
-    console.log(`You deposited ${movement}`);
-  } else {
-    console.log(`You withdrew ${Math.abs(movement)}`);
-  }
-});
+// movements.forEach(function(movement) {
+//   if(movement > 0) {
+//     console.log(`You deposited ${movement}`);
+//   } else {
+//     console.log(`You withdrew ${Math.abs(movement)}`);
+//   }
+// });
 // logs You deposited 200
 // You deposited 450
 // You withdrew 400
@@ -112,6 +112,28 @@ movements.forEach(function(movement) {
 // You withdrew 130
 // You deposited 70
 // You deposited 1300
+
+// what if we need to know the index of the value?
+// for-of used entries() (modifying the above to demonstrate this)
+// for-Each makes it easy in that it passes in the index, values, and arr
+// so the above can become:
+movements.forEach(function(movement, index, array) {
+  if(movement > 0) {
+    console.log(`Movement ${index + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${index + 1}: You withdrew ${Math.abs(movement)}`);
+  }
+});
+// it's important that the 1st arg is always the element, the 2nd arg
+// is always the index, and the 3rd arg is always the array
+// logs Movement 1: You deposited 200
+// Movement 2: You deposited 450
+// Movement 3: You withdrew 400
+// Movement 4: You deposited 3000
+// Movement 5: You withdrew 650
+// Movement 6: You withdrew 130
+// Movement 7: You deposited 70
+// Movement 8: You deposited 1300
 
 
 /////////////////////////////////////////////////
