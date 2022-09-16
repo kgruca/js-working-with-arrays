@@ -73,9 +73,51 @@ const currencies = new Map([
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
+
+// NEW SECTION
+// For-Each Loop
+
+// for camparison, the for-of loop:
+for (const movement of movements) {
+  if(movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+}
+// logs You deposited 200
+// You deposited 450
+// You withdrew 400
+// You deposited 3000
+// You withdrew 650
+// You withdrew 130
+// You deposited 70
+// You deposited 1300
+
+console.log('---------FOREACH--------');
+
+// for-each achieves the same thing, in a maybe easier way
+movements.forEach(function(movement) {
+  if(movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+});
+// logs You deposited 200
+// You deposited 450
+// You withdrew 400
+// You deposited 3000
+// You withdrew 650
+// You withdrew 130
+// You deposited 70
+// You deposited 1300
+
+
 /////////////////////////////////////////////////
 
 
+/*
 // NEW SECTION
 // the At method
 const arr = [23, 11, 78];
@@ -107,6 +149,7 @@ console.log(arr.at(-1));
 // the at method also works on strings!
 console.log('Svitlana'.at(-1));
 // logs a
+*/
 
 
 /*
