@@ -77,6 +77,40 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 
 // NEW SECTION
+// the At method
+const arr = [23, 11, 78];
+console.log(arr[0]);
+// logs 23
+// can now do the same thing with the new 'at' method
+console.log(arr.at(0));
+// logs 23
+
+// why do we care? It does the same thing as the bracket notation
+// there is one thing about it that makes it useful to use 
+// suppose we want the value at the end of the array
+
+// getting the last element
+console.log(arr[arr.length - 1]);
+// logs 78
+// the other traditional way to do this is 
+console.log(arr.slice(-1)[0]);
+// logs 78 (without the [0], we would get [78] instead of 78)
+console.log(arr.at(-1));
+// logs 78
+
+// so, it's a slightly faster and more modern way of grabbing the last element 
+// so which should be used: bracket notation or at()? It depends 
+// if need to grab last elem or count from end of array, use at()
+// also use in situations in which you need to do method chaining (more later)
+// otherwise, use bracket notation
+
+// the at method also works on strings!
+console.log('Svitlana'.at(-1));
+// logs a
+
+
+/*
+// NEW SECTION
 // Slice
 let arr = ['a', 'b', 'c', 'd', 'e'];
 // slice returns a new array and does't mutate the original array
@@ -101,6 +135,7 @@ console.log(arr.slice());
 // logs ['c', 'd', 'e']
 // console.log(arr.splice(arr));
 // logs ['a', 'b']
+*/
 
 /* therefore, the big difference between slice() and splice() it:
 - slice() returns a new array and doesn't modify the original arr
@@ -123,6 +158,7 @@ console.log(arr.slice());
 // commenting out above to be able to continue practicing with methods
 
 
+/*
 // NEW SECTION
 // Reverse
 const arr2 = ['f', 'g', 'h', 'i', 'j'];
@@ -150,3 +186,5 @@ console.log(letters2);
 // Join
 console.log(letters.join('-'));
 // logs a-b-c-d-e-f-g-h-i-j
+*/
+
