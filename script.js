@@ -75,6 +75,37 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 
 // NEW SECTION
+// forEach() works with maps and sets
+
+// with a map
+currencies.forEach(function(value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+// logs USD: United States dollar
+// EUR: Euro
+// GBP: Pound sterling
+
+// with a set
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+// remember that sets create a list of UNIQUE values
+console.log(currenciesUnique);
+// logs {'USD', 'GBP', 'EUR'}
+currenciesUnique.forEach(function(value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+// logs USD: USD
+// GBP: GBP
+// EUR: EUR
+// this doesn't really make sense, since there is no key in sets
+// key was kept in the list of params, to make it less confusing for devs
+// this way, forEach() retains the same params for arrays, maps, and sets
+// the list of params in this forEach() loop may be written as 
+// forEach(value, _, map);
+// '_' can be used for "throw-away" variables
+ 
+
+/*
+// NEW SECTION
 // For-Each Loop
 
 // for camparison, the for-of loop:
@@ -134,6 +165,12 @@ movements.forEach(function(movement, index, array) {
 // Movement 6: You withdrew 130
 // Movement 7: You deposited 70
 // Movement 8: You deposited 1300
+
+// when should for-Of or forEach() be used?
+// break and continue statements don't work in a forEach() loop
+// if need to break out of a loop, then use for-Of loop
+// other than that, it's up to personal preference
+*/
 
 
 /////////////////////////////////////////////////
