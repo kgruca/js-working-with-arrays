@@ -144,3 +144,9 @@ const letters2 = [...arr, ...arr2];
 console.log(letters2);
 // logs ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 // neither of these 2 methods mutates the original array
+
+
+// NEW SECTION
+// Join
+console.log(letters.join('-'));
+// logs a-b-c-d-e-f-g-h-i-j
