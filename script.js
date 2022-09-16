@@ -89,6 +89,29 @@ displayMovements(account1.movements);
 // LECTURES
 
 
+// NEW SECTION
+// Array transformations - Map, Filter, Reduce
+
+/* 
+1. map()
+- is similar to the forEach() method as it loops over arrays,
+but it creates a brand new array, based on the original array
+- uses a callback function to transform the elems of the original 
+array, and then maps the values of the original arr to a new array
+- map returns a new array containing the results of applying an
+operation on all original array elems
+
+2. filter()
+- returns a new array containing the array elems that passed a 
+specified test condition
+- all elems that do not pass the test condition are filtered out
+and are not added to the new array
+
+3. reduce()
+- boils down (reduces) all array elems down to a single value
+(e.g. adding all the elems together)
+
+
 /* 
 const currencies = new Map([
   ['USD', 'United States dollar'],
