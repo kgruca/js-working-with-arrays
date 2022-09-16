@@ -121,3 +121,13 @@ console.log(arr.slice());
 // so splicing starts at index 1 (b) and splices 2 elements away (b, and c)
 
 // commenting out above to be able to continue practicing with methods
+
+
+// NEW SECTION
+// Reverse
+const arr2 = ['f', 'g', 'h', 'i', 'j'];
+console.log(arr2.reverse());
+// logs ['j', 'i', 'h', 'g', 'f']
+// reverse() DOES mutate the original array:
+console.log(arr2);
+// logs ['j', 'i', 'h', 'g', 'f']
