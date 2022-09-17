@@ -84,11 +84,18 @@ const displayMovements = function(movements) {
 
 displayMovements(account1.movements);
 
+
+const user = 'Steven Thomas Williams';
+// want to convert this to lower-case initials (stw)
+const username = user.toLowerCase().split(' ').map(name => name[0]).join('');
+console.log(username);
+
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
 
-
+/*
 // NEW SECTION
 // MAP method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
@@ -137,7 +144,7 @@ console.log(movDesc);
 
 // difference between using map() and forEach - forEach creates a 'side-effect'
 // in that something is logged to the console. map() creates a new array
-
+*/
 
 
 // NEW SECTION
