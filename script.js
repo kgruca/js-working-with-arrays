@@ -113,13 +113,32 @@ console.log(movementsUSDfor);
 // so for of loop and map method create the same result
 
 // the map method is more in line with functional programming, while for-of
-// loop is more procedural
+// loop is more procedural. Modern JS is shifting to functional programming
+// so map() is more often preferred over for-of
 
 // challenge: to replace the callback for movementsUSD with an arrow func:
 const movementsUSD = movements.map(mov => mov * eurToUsd);
 console.log(movementsUSD);
 // logs [220.00000000000003, 495.00000000000006, -440.00000000000006, 
 // 3300.0000000000005, -715.0000000000001, -143, 77, 1430.0000000000002]
+
+// const movDesc = movements.map((mov, i, arr) => {
+//   if (mov > 0) {
+//     return `Movement ${i + 1}: You deposited ${mov}`;
+//   } else {
+//     return `Movement ${i + 1}: You withdrew ${Math.abs(mov)}`;
+//   }
+// }); 
+// consolidate the code above using ternary operator + arrow function:
+
+const movDesc = movements.map((mov, i) => `Movement ${i + 1}: You ${mov > 0? 'deposited' : 'withdrew'} ${Math.abs(mov)}`);
+
+console.log(movDesc);
+
+// difference between using map() and forEach - forEach creates a 'side-effect'
+// in that something is logged to the console. map() creates a new array
+
+
 
 // NEW SECTION
 // Array transformations - Map, Filter, Reduce
