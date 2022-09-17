@@ -87,8 +87,20 @@ displayMovements(account1.movements);
 
 const user = 'Steven Thomas Williams';
 // want to convert this to lower-case initials (stw)
-const username = user.toLowerCase().split(' ').map(name => name[0]).join('');
-console.log(username);
+// const username = user.toLowerCase().split(' ').map(name => 
+// name[0]).join('');
+// console.log(username);
+
+// now make a function from this
+
+const createUsernames = function(accs) {
+  accs.forEach(function(acc) {
+    acc.username = acc.owner.toLowerCase().split(' ').map(name => name[0]).join('');
+  });
+};
+
+createUsernames(accounts);
+console.log(accounts);
 
 
 /////////////////////////////////////////////////
