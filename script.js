@@ -90,6 +90,38 @@ displayMovements(account1.movements);
 
 
 // NEW SECTION
+// MAP method
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// let's say we want ot convert these from euro to dollars
+const eurToUsd = 1.1;
+
+// const movementsUSD = movements.map(function(mov) {
+//   return mov * eurToUsd;
+// });
+// console.log(movements);
+// logs [200, 450, -400, 3000, -650, -130, 70, 1300]
+// console.log(movementsUSD);
+// logs [220.00000000000003, 495.00000000000006, -440.00000000000006, 
+// 3300.0000000000005, -715.0000000000001, -143, 77, 1430.0000000000002]
+// will learn later where the errors come from ^
+
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+console.log(movementsUSDfor);
+// logs [220.00000000000003, 495.00000000000006, -440.00000000000006, 
+// 3300.0000000000005, -715.0000000000001, -143, 77, 1430.0000000000002]
+// so for of loop and map method create the same result
+
+// the map method is more in line with functional programming, while for-of
+// loop is more procedural
+
+// challenge: to replace the callback for movementsUSD with an arrow func:
+const movementsUSD = movements.map(mov => mov * eurToUsd);
+console.log(movementsUSD);
+// logs [220.00000000000003, 495.00000000000006, -440.00000000000006, 
+// 3300.0000000000005, -715.0000000000001, -143, 77, 1430.0000000000002]
+
+// NEW SECTION
 // Array transformations - Map, Filter, Reduce
 
 /* 
@@ -119,7 +151,7 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
 */
 
 
