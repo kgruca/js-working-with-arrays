@@ -107,10 +107,23 @@ console.log(accounts);
 /////////////////////////////////////////////////
 // LECTURES
 
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+
+// NEW SECTION
+// FILTER method
+
+const deposits = movements.filter(function(mov) {  
+  return mov > 0;
+});
+
+console.log(movements);
+
+
 /*
 // NEW SECTION
 // MAP method
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // let's say we want ot convert these from euro to dollars
 const eurToUsd = 1.1;
 
