@@ -112,6 +112,32 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 
 // NEW SECTION
+// REDUCE method
+
+// reduce() takes parameters: accumulator, current, i, array
+// accumulator acts like a snowball - changes with each element
+// in this case, it will add the elems of movements together 
+// const balance = movements.reduce(function(acc, curr, i, arr) {
+//   return acc + curr // accumulator is the sum of all the previous values
+// }, 0); 
+// this second value (0) is the amount that the accumulator should start at
+// console.log(balance);
+// logs 3840
+
+const balance = movements.reduce((acc, curr) => acc + curr, 0);
+console.log(balance);
+// logs 3840
+
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
+// logs 3840
+
+// 
+
+
+/*
+// NEW SECTION
 // FILTER method
 
 const deposits = movements.filter(function(mov) {  
@@ -140,7 +166,6 @@ console.log(withdrawals);
 // logs [-400, -650, -130]
 
 
-/*
 // NEW SECTION
 // MAP method
 // let's say we want ot convert these from euro to dollars
