@@ -85,7 +85,14 @@ const displayMovements = function(movements) {
 displayMovements(account1.movements);
 
 
-const user = 'Steven Thomas Williams';
+const calcDisplayBalance = function(movements) {
+  const balance = movements.reduce((arr, mov) => arr + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+calcDisplayBalance(account1.movements);
+
+
+// const user = 'Steven Thomas Williams';
 // want to convert this to lower-case initials (stw)
 // const username = user.toLowerCase().split(' ').map(name => 
 // name[0]).join('');
@@ -98,9 +105,7 @@ const createUsernames = function(accs) {
     acc.username = acc.owner.toLowerCase().split(' ').map(name => name[0]).join('');
   });
 };
-
 createUsernames(accounts);
-console.log(accounts);
 
 
 /////////////////////////////////////////////////
@@ -133,7 +138,8 @@ for (const mov of movements) balance2 += mov;
 console.log(balance2);
 // logs 3840
 
-// 
+// reduce() doesn't need to be used for just sums. Say we want the max value
+
 
 
 /*
