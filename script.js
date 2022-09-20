@@ -139,7 +139,12 @@ console.log(balance2);
 // logs 3840
 
 // reduce() doesn't need to be used for just sums. Say we want the max value
-
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else return mov;
+}, movements[0]);
+console.log(max);
+// logs 3000 
 
 
 /*
