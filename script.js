@@ -119,6 +119,25 @@ const deposits = movements.filter(function(mov) {
 });
 
 console.log(movements);
+// logs [200, 450, -400, 3000, -650, -130, 70, 1300]
+console.log(deposits);
+// logs [200, 450, 3000, 70, 1300]
+// only elements that satisfy the condition get added to the new array
+ 
+//vs
+
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor);
+// logs [200, 450, 3000, 70, 1300]
+
+// so why not use for loop for everything?
+// 1. because there is a push for this style of coding in JS now
+// 2. the methods (functional) approach can chain methods one after another
+
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
+// logs [-400, -650, -130]
 
 
 /*
