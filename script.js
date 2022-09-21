@@ -97,6 +97,9 @@ const calcDisplaySummary = function(movements) {
 
   const out = movements.filter(mov => mov < 0).reduce((acc, mov) => acc + Math.abs(mov), 0);
   labelSumOut.textContent = `${out}€`;
+
+  const interest = movements.filter(mov => mov > 0).map(deposit => deposit * 0.012).reduce((acc, interest) => acc + interest, 0);
+  labelSumInterest.textContent = `${interest}`;
 }
 
 calcDisplaySummary(account1.movements);
