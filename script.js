@@ -148,6 +148,12 @@ console.log(totalDepositsUSD);
 
 // CAN ONLY CHAIN ONE METHOD TO ANOTHER IF THE FIRST RETURNS A NEW ARRAY
 
+// when chaining methods, look for way to optimize them (reduce the total amt)
+// makes errors less likely for larger arrays
+
+// it's considered bad practice in JS to chain methods that directly mutate 
+// the original array. So, try not to chain methods like splice() or reverse()
+
 
 /*
 // NEW SECTION
