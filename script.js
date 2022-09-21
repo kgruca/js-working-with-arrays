@@ -74,7 +74,7 @@ const displayMovements = function(movements) {
       <div class="movements__row">
         <div class="movements__type movements__type--${type}">${i + 1} 
         ${type}</div>
-        <div class="movements__value">${mov}</div>
+        <div class="movements__value">${mov}€</div>
       </div>
     `;
 
@@ -91,6 +91,12 @@ const calcDisplayBalance = function(movements) {
 };
 calcDisplayBalance(account1.movements);
 
+const calcDisplaySummary = function(movements) {
+  const incomes = movements.filter(mov => mov > 0).reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${incomes}€`;
+}
+
+calcDisplaySummary(account1.movements);
 
 // const user = 'Steven Thomas Williams';
 // want to convert this to lower-case initials (stw)
@@ -124,7 +130,9 @@ const totalDepositsUSD = movements
   .map(mov => mov * eurToUsd)
   .reduce((acc, mov) => acc + mov, 0);
 console.log(totalDepositsUSD);
-// logs 
+// logs 5522.000000000001
+
+// CAN ONLY CHAIN ONE METHOD TO ANOTHER IF THE FIRST RETURNS A NEW ARRAY
 
 
 /*
