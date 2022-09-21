@@ -114,8 +114,20 @@ createUsernames(accounts);
 
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const eurToUsd = 1.1;
 
 
+// NEW SECTION
+// Chaining methods together
+const totalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  .map(mov => mov * eurToUsd)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(totalDepositsUSD);
+// logs 
+
+
+/*
 // NEW SECTION
 // REDUCE method
 
@@ -147,7 +159,6 @@ console.log(max);
 // logs 3000 
 
 
-/*
 // NEW SECTION
 // FILTER method
 
@@ -180,7 +191,6 @@ console.log(withdrawals);
 // NEW SECTION
 // MAP method
 // let's say we want ot convert these from euro to dollars
-const eurToUsd = 1.1;
 
 // const movementsUSD = movements.map(function(mov) {
 //   return mov * eurToUsd;
