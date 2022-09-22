@@ -156,6 +156,7 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
+    // update the user's UI
     updateUI(currentAccount);
   }
 });
@@ -179,7 +180,8 @@ btnTransfer.addEventListener('click', function (e) {
       receiverAccount.movements.push(amount);
   }
 
-
+  // update the user's UI
+  updateUI(currentAccount);
 });
 
 
