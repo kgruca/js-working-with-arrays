@@ -128,6 +128,23 @@ const createUsernames = function(accs) {
 createUsernames(accounts);
 
 
+// Event handlers for login
+
+let currentAccount;
+
+btnLogin.addEventListener('click', function (e) {
+  // prevent form from submitting 
+  e.preventDefault();
+  
+  currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
+  console.log(currentAccount);
+
+  if (currentAccount.pin === Number(inputLoginPin.value)) {
+     console.log('Login');
+  }
+});
+
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -137,6 +154,7 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const eurToUsd = 1.1;
 
 
+/*
 // NEW SECTION
 // FIND method
 
@@ -154,9 +172,14 @@ console.log(account);
 // logs {owner: 'Jessica Davis', movements: Array(8), interestRate: 1.5, pin: 
 // 2222, username: 'jd'}
 
+// Challenge: corresponding for-Of loop:
+for (const account of accounts) {
+  if (account.owner === "Jessica Davis") console.log(account);
+}
+// logs {owner: 'Jessica Davis', movements: Array(8), interestRate: 1.5, pin: 
+// 2222, username: 'jd'}
 
 
-/*
 // NEW SECTION
 // Chaining methods together
 const totalDepositsUSD = movements
