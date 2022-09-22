@@ -169,7 +169,8 @@ btnTransfer.addEventListener('click', function (e) {
   const amount = Number(inputTransferAmount.value);
   const receiverAccount = accounts.find(acc => acc.username === inputTransferTo.value);
 
-  console.log(amount, receiverAccount);
+  // clear transfer amt and receiver from input fields
+  inputTransferAmount.value = inputTransferTo.value = '';
 
   if (amount > 0 && 
     receiverAccount &&
@@ -182,6 +183,7 @@ btnTransfer.addEventListener('click', function (e) {
 
   // update the user's UI
   updateUI(currentAccount);
+
 });
 
 
