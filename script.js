@@ -106,6 +106,17 @@ const calcDisplaySummary = function(account) {
     .filter(interest => interest > 1)
     .reduce((acc, interest) => acc + interest, 0);
   labelSumInterest.textContent = `${interest}€`;
+};
+
+const updateUI = function (account) {
+  // Display movements
+  displayMovements(account.movements);
+
+  // Display balance
+  calcDisplayBalance(account);
+
+  // Display summary 
+  calcDisplaySummary(account);
 }
 
 
@@ -145,14 +156,7 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
-    // Display movements
-    displayMovements(currentAccount.movements);
-
-    // Display balance
-    calcDisplayBalance(currentAccount);
-
-    // Display summary 
-    calcDisplaySummary(currentAccount);
+    updateUI(currentAccount);
   }
 });
 
@@ -174,6 +178,7 @@ btnTransfer.addEventListener('click', function (e) {
       currentAccount.movements.push(-amount);
       receiverAccount.movements.push(amount);
   }
+
 
 });
 
