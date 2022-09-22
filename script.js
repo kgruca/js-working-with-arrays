@@ -166,7 +166,12 @@ btnTransfer.addEventListener('click', function (e) {
 
   console.log(amount, receiverAccount);
 
-  if (amount > 0 && )
+  if (amount > 0 && 
+    receiverAccount &&
+    currentAccount.balance >= amount && 
+    receiverAccount?.username !== currentAccount.username) {
+      console.log('Transfer valid');
+  }
 
   // add negative movement to current user
 
