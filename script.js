@@ -82,14 +82,12 @@ const displayMovements = function(movements) {
   });
 };
 
-displayMovements(account1.movements);
-
 
 const calcDisplayBalance = function(movements) {
   const balance = movements.reduce((arr, mov) => arr + mov, 0);
   labelBalance.textContent = `${balance} EUR`;
 };
-calcDisplayBalance(account1.movements);
+
 
 const calcDisplaySummary = function(movements) {
   const incomes = movements
@@ -110,7 +108,6 @@ const calcDisplaySummary = function(movements) {
   labelSumInterest.textContent = `${interest}`;
 }
 
-calcDisplaySummary(account1.movements);
 
 // const user = 'Steven Thomas Williams';
 // want to convert this to lower-case initials (stw)
@@ -139,8 +136,19 @@ btnLogin.addEventListener('click', function (e) {
   currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
   console.log(currentAccount);
 
-  if (currentAccount.pin === Number(inputLoginPin.value)) {
-     console.log('Login');
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    // Display UI and message
+    labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`; 
+    containerApp.style.opacity = 100;
+
+    // Display movements
+
+
+    // Display balance
+
+
+    // Display summary 
+     
   }
 });
 
