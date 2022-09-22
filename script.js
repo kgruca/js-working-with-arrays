@@ -138,6 +138,22 @@ const eurToUsd = 1.1;
 
 
 // NEW SECTION
+// FIND method
+
+// retrieves an element from the array, using a callback function
+const firstWithdrawal = movements.find(mov => mov < 0); 
+console.log(firstWithdrawal);
+// logs -400
+
+// the difference between find() and filter() is that
+// filter() returns a new array with all elems that satisfy the condition
+// find() returns the first element that satisfies the condition
+
+
+
+
+/*
+// NEW SECTION
 // Chaining methods together
 const totalDepositsUSD = movements
   .filter(mov => mov > 0)
@@ -155,7 +171,6 @@ console.log(totalDepositsUSD);
 // the original array. So, try not to chain methods like splice() or reverse()
 
 
-/*
 // NEW SECTION
 // REDUCE method
 
