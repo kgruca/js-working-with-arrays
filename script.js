@@ -149,6 +149,10 @@ console.log(firstWithdrawal);
 // filter() returns a new array with all elems that satisfy the condition
 // find() returns the first element that satisfies the condition
 
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
+// logs {owner: 'Jessica Davis', movements: Array(8), interestRate: 1.5, pin: 
+// 2222, username: 'jd'}
 
 
 
