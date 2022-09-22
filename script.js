@@ -83,9 +83,9 @@ const displayMovements = function(movements) {
 };
 
 
-const calcDisplayBalance = function(movements) {
-  const balance = movements.reduce((arr, mov) => arr + mov, 0);
-  labelBalance.textContent = `${balance} EUR`;
+const calcDisplayBalance = function(account) {
+  account.balance = account.movements.reduce((arr, mov) => arr + mov, 0);
+  labelBalance.textContent = `${account.balance}€`;
 };
 
 
@@ -149,11 +149,30 @@ btnLogin.addEventListener('click', function (e) {
     displayMovements(currentAccount.movements);
 
     // Display balance
-    calcDisplayBalance(currentAccount.movements);
+    calcDisplayBalance(currentAccount);
 
     // Display summary 
     calcDisplaySummary(currentAccount);
   }
+});
+
+
+// event handler for money transfer
+btnTransfer.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const amount = Number(inputTransferAmount.value);
+  const receiverAccount = accounts.find(acc => acc.username === inputTransferTo.value);
+
+  console.log(amount, receiverAccount);
+
+  if (amount > 0 && )
+
+  // add negative movement to current user
+
+  // currentAccount = accounts.find(acc => acc.username === 
+  // inputLoginUsername.value);
+  // currentAccount.movements.push()
 });
 
 
