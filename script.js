@@ -190,19 +190,25 @@ btnTransfer.addEventListener('click', function (e) {
 // event handler to close account
 btnClose.addEventListener('click', function(e) {
   e.preventDefault();
+
   // check that username and pin match the current user + pin
   if (inputCloseUsername.value === currentAccount.username &&
      Number(inputClosePin.value) === currentAccount.pin) {
+
     // find the index of the current user in the accounts array
     const index = accounts.findIndex(acc => acc.username === 
       currentAccount.username);
+
     // delete that user from the array
     accounts.splice(index, 1);
 
     // hide the UI 
     containerApp.style.opacity = 0;
-    console.log(accounts);
   }
+
+  // clear the input fields for the "Close Account" section
+  inputClosePin.value = inputCloseUsername.value = '';
+  inputClosePin.blur();
 });
 
 
