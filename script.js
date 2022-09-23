@@ -242,6 +242,21 @@ const eurToUsd = 1.1;
 
 
 // NEW SECTION
+// FLAT and FLATMAP methods
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8]
+
+// what if want to take all the elems in the subarrays, etc, and put
+// them all in one big array? Use flat()
+console.log(arr.flat());
+// logs [1, 2, 3, 4, 5, 6, 7, 8]
+// no callback function is needed
+// called the flat method because it "flattens" an array with subarrays
+
+
+
+
+/*
+// NEW SECTION
 // SOME and EVERY methods
 
 // already went through the includes() method to find an elem in arr
@@ -289,7 +304,6 @@ console.log(movements.filter(deposit));
 // findIndex() is used above in the event handler to delete a user's account
 
 
-/*
 // NEW SECTION
 // FIND method
 
