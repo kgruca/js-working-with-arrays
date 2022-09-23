@@ -269,6 +269,15 @@ console.log(movements.every(mov => mov > 0));
 console.log(account4.movements.every(mov => mov > 0));
 // logs true
 
+// can do separate callback functions and use them in the different methods
+const deposit = mov => mov > 0;
+console.log(movements.every(deposit));
+// logs false
+console.log(movements.some(deposit));
+// logs true
+console.log(movements.filter(deposit));
+// logs [200, 450, 3000, 70, 1300]
+
 
 // NEW SECTION
 // FINDINDEX method
