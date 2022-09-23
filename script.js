@@ -248,6 +248,7 @@ const eurToUsd = 1.1;
 console.log(movements.includes(-130));
 // logs true
 
+// SOME()
 // but what if you want to test for a condition instead?
 // for example, we want to know if there are any deposits (positive
 // movements) in the movements array
@@ -261,6 +262,12 @@ console.log(movements.some(mov => mov > 5000));
 // for a value being searched for in the array
 // but some() tests a condition
 
+// EVERY()
+// logs true if EVERY elem in an arr satisfies the condition
+console.log(movements.every(mov => mov > 0));
+// logs false
+console.log(account4.movements.every(mov => mov > 0));
+// logs true
 
 
 // NEW SECTION
