@@ -285,6 +285,17 @@ const overallBalance = accounts
 console.log(overallBalance);
 // logs 17840
 
+// since map() and flat() are often used together, there is flatMap()
+// flatMap() combines flat() and map() into one mehod, and is better
+// for performance
+const overallBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((accum, mov) => accum + mov, 0);
+console.log(overallBalance2);
+// logs 17840
+
+// flatMap() takes the same callback func as map()
+
 
 /*
 // NEW SECTION
