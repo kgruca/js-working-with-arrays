@@ -222,11 +222,35 @@ const eurToUsd = 1.1;
 
 
 // NEW SECTION
+// SOME and EVERY methods
+
+// already went through the includes() method to find an elem in arr
+console.log(movements.includes(-130));
+// logs true
+
+// but what if you want to test for a condition instead?
+// for example, we want to know if there are any deposits (positive
+// movements) in the movements array
+console.log(movements.some(mov => mov > 0));
+// logs true
+// or check if there is a deposit greater than $5000:
+console.log(movements.some(mov => mov > 5000));
+// logs false  
+
+// so includes() tests for equality - there has to be an exact match 
+// for a value being searched for in the array
+// but some() tests a condition
+
+
+
+// NEW SECTION
 // FINDINDEX method
 
 // used in situations, such as when you want to delete an element 
 // from an array and need to find the index (to pass the index into the slic()
 // method)
+
+// findIndex() is used above in the event handler to delete a user's account
 
 
 /*
