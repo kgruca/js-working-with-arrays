@@ -262,6 +262,23 @@ console.log(arrDeep.flat(2));
 // logs [1, 2, 3, 4, 5, 6, 7, 8]
 // this time, it went into the second level of testing
 
+// what if want to take the overall balance of all the movements of all 
+// the accounts?
+// first, put all the arrays of movements from "accounts" into one array
+// this will create one array with 4 nested arrays
+const accountMovements = accounts.map(acc => acc.movements);
+// now, flatten this array
+const allMovements = accountMovements.flat();
+console.log(allMovements);
+// logs [200, 450, -400, 3000, -650, -130, 70, 1300, 5000, 3400, -150, 
+// -790, -3210, -1000, 8500, -30, 200, -200, 340, -300, -20, 50, 400, 
+// -460, 430, 1000, 700, 50, 90]
+// now to get the total balance:
+console.log(allMovements.reduce((accum, mov) => accum + mov, 0));
+// logs 17840
+
+
+
 
 /*
 // NEW SECTION
