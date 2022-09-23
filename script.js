@@ -252,7 +252,15 @@ console.log(arr.flat());
 // no callback function is needed
 // called the flat method because it "flattens" an array with subarrays
 
-
+const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8]
+console.log(arrDeep.flat());
+// logs [[1, 2], 3, 4, [5, 6], 7, 8]
+// this means that flat() only works one level deep
+// flat() takes a "depth" parameter, and the default is one
+// can specify a different level of depth:
+console.log(arrDeep.flat(2));
+// logs [1, 2, 3, 4, 5, 6, 7, 8]
+// this time, it went into the second level of testing
 
 
 /*
