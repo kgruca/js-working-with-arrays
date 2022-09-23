@@ -187,6 +187,25 @@ btnTransfer.addEventListener('click', function (e) {
 });
 
 
+// event handler to close account
+btnClose.addEventListener('click', function(e) {
+  e.preventDefault();
+  // check that username and pin match the current user + pin
+  if (inputCloseUsername.value === currentAccount.username &&
+     Number(inputClosePin.value) === currentAccount.pin) {
+    // find the index of the current user in the accounts array
+    const index = accounts.findIndex(acc => acc.username === 
+      currentAccount.username);
+    // delete that user from the array
+    accounts.splice(index, 1);
+
+    // hide the UI 
+    containerApp.style.opacity = 0;
+    console.log(accounts);
+  }
+});
+
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -194,6 +213,14 @@ btnTransfer.addEventListener('click', function (e) {
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const eurToUsd = 1.1;
+
+
+// NEW SECTION
+// FINDINDEX method
+
+// used in situations, such as when you want to delete an element 
+// from an array and need to find the index (to pass the index into the slic()
+// method)
 
 
 /*
