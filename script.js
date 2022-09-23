@@ -277,7 +277,13 @@ console.log(allMovements);
 console.log(allMovements.reduce((accum, mov) => accum + mov, 0));
 // logs 17840
 
-
+// do this through chaining, practice: 
+const overallBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((accum, mov) => accum + mov, 0);
+console.log(overallBalance);
+// logs 17840
 
 
 /*
