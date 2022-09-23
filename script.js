@@ -295,6 +295,8 @@ console.log(overallBalance2);
 // logs 17840
 
 // flatMap() takes the same callback func as map()
+// Remember - flatMap() only goes ONE level deep
+// for deeper nested levels, have to use flat() (and map(), separately) 
 
 
 /*
