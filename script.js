@@ -242,6 +242,17 @@ const eurToUsd = 1.1;
 
 
 // NEW SECTION
+// Sorting arrays
+const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+console.log(owners.sort());
+// logs ['Adam', 'Jonas', 'Martha', 'Zach']
+console.log(owners);
+// logs ['Adam', 'Jonas', 'Martha', 'Zach']
+
+// so sort() mutates the original array
+
+
+// NEW SECTION
 // FLAT and FLATMAP methods
 const arr = [[1, 2, 3], [4, 5, 6], 7, 8]
 
