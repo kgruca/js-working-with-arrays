@@ -251,6 +251,14 @@ console.log(owners);
 
 // so sort() mutates the original array
 
+// numbers:
+console.log(movements.sort());
+// logs [-130, -400, -650, 1300, 200, 3000, 450, 70]
+
+// sort() converts everything to strings first, and then orders the elems
+// that is why the result of sorting a numbers arr gives us something we 
+// don't expect
+
 
 // NEW SECTION
 // FLAT and FLATMAP methods
