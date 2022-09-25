@@ -259,6 +259,14 @@ console.log(movements.sort());
 // that is why the result of sorting a numbers arr gives us something we 
 // don't expect
 
+// instead:
+movements.sort((a, b) => {
+  if (a > b) return 1;
+  if (b > a) return -1;
+});
+console.log(movements);
+// logs [-650, -400, -130, 70, 200, 450, 1300, 3000]
+
 
 // NEW SECTION
 // FLAT and FLATMAP methods
