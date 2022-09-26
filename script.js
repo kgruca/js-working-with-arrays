@@ -253,6 +253,7 @@ const eurToUsd = 1.1;
 // NEW SECTION
 // different ways to create arrays
 
+// empty array with fill()
 // the following can be used to create an empty array with 7 positions
 const x = new Array(7);
 console.log(x);
@@ -276,11 +277,21 @@ x.fill(1, 3, 5);
 console.log(x);
 // logs [empty × 3, 1, 1, empty × 2]
 
+// ex with already existing array - works too 
 const y = [1, 2, 3, 4, 5, 6, 7];
 console.log(y.fill(23, 2, 6));
 // logs [1, 2, 23, 23, 23, 23, 7]
 
-  
+// Array.from
+const z = Array.from({length: 7}, () => 1);
+console.log(z);
+// logs [1, 1, 1, 1, 1, 1, 1]
+const w = Array.from({length: 7}, (curr, i) => i + 1);
+console.log(w);
+// logs [1, 2, 3, 4, 5, 6, 7]
+// instead of writing curr in the callback function above
+// can use "_" instead - this means that the variable won't
+// be used (it's a throwaway variable)
 
 
 // NEW SECTION
