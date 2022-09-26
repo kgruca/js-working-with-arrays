@@ -299,6 +299,26 @@ const diceOneHundred = Array.from({length: 100}, () => Math.floor(
 console.log(diceOneHundred);
 // logs 100 "random" nums between 1 and 6 
 
+// Array.from() was originally introduced to create arrays from
+// array-like structures
+
+// let's say that the movement array from up above doesn't exist -
+// the values are only stored in the UI of the Bankist webpage
+
+labelBalance.addEventListener('click', function() {
+  const movementsUI = Array.from(document.querySelectorAll
+    (".movements__value"));
+    console.log(movementsUI);
+});
+
+// upon clicking the balance, logs:
+// [div.movements__value, div.movements__value, 
+// div.movements__value, div.movements__value, 
+// div.movements__value, div.movements__value, 
+// div.movements__value, div.movements__value]
+
+
+
 
 // NEW SECTION
 // Sorting arrays
