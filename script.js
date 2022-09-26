@@ -261,11 +261,11 @@ console.log(movements.sort());
 
 // instead:
 // ASCENDING
-movements.sort((a, b) => {
-  if (a > b) return 1;
-  if (b > a) return -1;
-});
-console.log(movements);
+// movements.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (b > a) return -1;
+// });
+// console.log(movements);
 // logs [-650, -400, -130, 70, 200, 450, 1300, 3000]
 
 // DESCENDING
@@ -275,6 +275,19 @@ movements.sort((a, b) => {
 });
 console.log(movements);
 // logs [3000, 1300, 450, 200, 70, -130, -400, -650]
+
+// can improve the sort statement by using changing it to:
+// ASCENDING
+movements.sort((a, b) => a - b);
+console.log(movements);
+// logs [-650, -400, -130, 70, 200, 450, 1300, 3000]
+
+// can also improve the DESCENDING sort:
+movements.sort((a, b) => b - a);
+console.log(movements);
+// logs [3000, 1300, 450, 200, 70, -130, -400, -650]
+
+
 
 
 // NEW SECTION
