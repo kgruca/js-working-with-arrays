@@ -293,6 +293,12 @@ console.log(w);
 // can use "_" instead - this means that the variable won't
 // be used (it's a throwaway variable)
 
+// challenge - create array with 100 random dice rolls:
+const diceOneHundred = Array.from({length: 100}, () => Math.floor(
+  Math.random() * 6) + 1);
+console.log(diceOneHundred);
+// logs 100 "random" nums between 1 and 6 
+
 
 // NEW SECTION
 // Sorting arrays
