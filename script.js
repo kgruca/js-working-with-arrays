@@ -251,6 +251,39 @@ const eurToUsd = 1.1;
 
 
 // NEW SECTION
+// different ways to create arrays
+
+// the following can be used to create an empty array with 7 positions
+const x = new Array(7);
+console.log(x);
+// logs [empty × 7]
+// console.log(x.map(() => 5));
+// logs [empty × 7], so the map method doesn't work with this way
+
+// the fill() method can be used instead - a little similar to the slice() 
+// method
+// x.fill(1);
+// console.log(x);
+// logs [1, 1, 1, 1, 1, 1, 1]
+
+// can specify the value wanted, and the array position to start it at:
+// x.fill(1, 3);
+// console.log(x);
+// logs [empty × 3, 1, 1, 1, 1]
+
+// can also specify the position to end this at:
+x.fill(1, 3, 5);
+console.log(x);
+// logs [empty × 3, 1, 1, empty × 2]
+
+const y = [1, 2, 3, 4, 5, 6, 7];
+console.log(y.fill(23, 2, 6));
+// logs [1, 2, 23, 23, 23, 23, 7]
+
+  
+
+
+// NEW SECTION
 // Sorting arrays
 const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
 console.log(owners.sort());
