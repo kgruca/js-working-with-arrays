@@ -62,11 +62,13 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 
-const displayMovements = function(movements) {
+const displayMovements = function(movements, sort = false) {
 
   containerMovements.innerHTML = '';
 
-  movements.forEach(function(mov, i, ) {
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach(function(mov, i) {
 
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
@@ -286,6 +288,9 @@ console.log(movements);
 movements.sort((a, b) => b - a);
 console.log(movements);
 // logs [3000, 1300, 450, 200, 70, -130, -400, -650]
+
+// there's no point using the sort method on arrays that
+// include both string and numbers - it won't sort correctly
 
 
 
