@@ -305,11 +305,11 @@ console.log(diceOneHundred);
 // let's say that the movement array from up above doesn't exist -
 // the values are only stored in the UI of the Bankist webpage
 
-labelBalance.addEventListener('click', function() {
-  const movementsUI = Array.from(document.querySelectorAll
-    (".movements__value"));
-    console.log(movementsUI);
-});
+// labelBalance.addEventListener('click', function() {
+//   const movementsUI = Array.from(document.querySelectorAll
+//     (".movements__value"));
+//     console.log(movementsUI);
+// });
 
 // upon clicking the balance, logs:
 // [div.movements__value, div.movements__value, 
@@ -317,7 +317,24 @@ labelBalance.addEventListener('click', function() {
 // div.movements__value, div.movements__value, 
 // div.movements__value, div.movements__value]
 
+// but let's say we want to map this array to get the actual value
+// something like:
+// labelBalance.addEventListener('click', function() {
+//   const movementsUI = Array.from(document.querySelectorAll
+//     (".movements__value"));
+//     console.log(movementsUI.map(el => Number(el.textContent.
+//     replace("€", ""))));
+// });
+// logs [1300, 70, -130, -650, 3000, -400, 450, 200]
 
+// can make the above more concise with:
+labelBalance.addEventListener('click', function() {
+  const movementsUI = Array.from(document.querySelectorAll
+    (".movements__value"), el => Number(el.textContent.replace("€", "")));
+    console.log(movementsUI);
+});
+// upon clicking the balance, logs:
+// [1300, 70, -130, -650, 3000, -400, 450, 200]
 
 
 // NEW SECTION
