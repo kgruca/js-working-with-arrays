@@ -251,6 +251,29 @@ const eurToUsd = 1.1;
 
 
 // NEW SECTION
+// array methods practice
+
+// 1. calculate total amount deposited into bank
+const bankDepositSum = accounts.flatMap(acc => acc.movements).filter(mov => mov > 0).reduce((acc, mov) => acc + mov, 0);
+console.log(bankDepositSum);
+// logs 25180
+
+// 2. how many deposits in bank w/ >= 1000€
+// easier solution:
+const depositsThousand = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov >= 1000).length;
+console.log(depositsThousand);
+// logs 6
+// harder solution:
+const numDeposits1000 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((count, curr) => (curr >= 1000 ? count + 1 : count), 0);
+console.log(numDeposits1000);
+// logs 6
+
+
+// NEW SECTION
 // different ways to create arrays
 
 // empty array with fill()
@@ -385,8 +408,6 @@ console.log(movements);
 
 // there's no point using the sort method on arrays that
 // include both string and numbers - it won't sort correctly
-
-
 
 
 // NEW SECTION
