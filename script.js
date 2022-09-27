@@ -268,9 +268,23 @@ console.log(depositsThousand);
 // harder solution:
 const numDeposits1000 = accounts
   .flatMap(acc => acc.movements)
-  .reduce((count, curr) => (curr >= 1000 ? count + 1 : count), 0);
+  .reduce((count, curr) => (curr >= 1000 ? ++count : count), 0);
 console.log(numDeposits1000);
 // logs 6
+
+// 3. create a new object that contains the sum of deposits and sum of 
+// withdrawals
+const sums = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((sums, curr) => {
+    // curr > 0 ? sums.deposits += curr : sums.withdrawals += curr;
+    // can simplify:
+    sums[curr > 0 ? 'deposits' : 'withdrawals'] += curr;
+    return sums;
+  }, {deposits: 0, withdrawals: 0}); 
+  console.log(sums);
+  // logs {deposits: 25180, withdrawals: -7340}
+
 
 
 // NEW SECTION
