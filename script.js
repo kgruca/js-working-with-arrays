@@ -285,6 +285,24 @@ const sums = accounts
   console.log(sums);
   // logs {deposits: 25180, withdrawals: -7340}
 
+// 4. something like 
+// this is a nice title --> This Is a Nice Title
+const convertTitleCase = function(title) {
+  // create an array with exceptions to the rule - common practice
+  const exceptions = ['a', 'an', 'the', 'but', 'or', 'on', 'in', 'with'];
+  // convert each title to lowercase, then split the title into an arr
+  const titleCase = title
+    .toLowerCase()
+    .split(' ')
+    .map(word => exceptions.includes(word) ? word : word[0].toUpperCase() 
+      + word.slice(1)).join(' ');
+
+    return titleCase;
+};
+
+console.log(convertTitleCase('this is a nice title'));
+console.log(convertTitleCase('this is a LONG title but not too long')); 
+console.log(convertTitleCase('and here is another title with an EXAMPLE'));
 
 
 // NEW SECTION
